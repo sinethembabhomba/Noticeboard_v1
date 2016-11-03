@@ -1,8 +1,16 @@
 angular.module('NTCB.AccountControllers', [])
-  .controller('LoadingController', function ($state,$ionicPopup) {
+  .controller('LoadingController', function ($state,$scope, $ionicPopup, LoginService, $ionicLoading, ionicToast, $state, UserProfileService) {
 
     $state.go('login');
-  })
+  });
+
+  this.login = function (){
+
+  };
+
+  this.Register = function (){
+
+  }
 
   .controller('MainContainerController', function($scope) {
 
@@ -17,15 +25,11 @@ angular.module('NTCB.AccountControllers', [])
 
   })
 
-  .controller('CreateAccountController',function($scope,$ionicPopup,$state,ionicToast,$ionicLoading,UserProfileService){
-
-  })
-
   .controller('ProfilePageController', function ($ionicScrollDelegate, $scope, $state, ionicToast, $ionicLoading, LocalStorageService, $filter, DB_CONSTANTS, ProfileFactory, $controller, $translate) {
 
   })
 
-  .controller('loginController', function($scope,$state,$ionicPopup,LoginService,$ionicLoading,ionicToast){
+  .controller('loginController', function(){
 
   })
   .controller('SubscriptionsController', function($scope,$stateParams,UserSubscriptions,$ionicLoading){
