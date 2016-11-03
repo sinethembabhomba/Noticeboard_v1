@@ -32,6 +32,7 @@ angular.module('NTCB.AccountControllers', [])
   .controller('loginController', function(){
 
   })
+
   .controller('SubscriptionsController', function($scope,$stateParams,UserSubscriptions,$ionicLoading){
 
   });
