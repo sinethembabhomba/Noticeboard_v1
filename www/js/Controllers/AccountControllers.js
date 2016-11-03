@@ -7,15 +7,13 @@ angular.module('NTCB.AccountControllers', [])
   .controller('MainContainerController', function($scope) {
 
   })
+
+
   .controller('HomeController', function($scope) {
 
   })
 
   .controller('HomeSubscriptionsController', function($scope) {
-
-  })
-
-  .controller('LoadingController', function ( $ionicPopup) {
 
   })
 
