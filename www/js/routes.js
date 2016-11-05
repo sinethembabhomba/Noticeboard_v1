@@ -12,14 +12,14 @@ angular.module('app.routes', [])
   .state('loading', {
         url: '/0',
         cache: false,
-        templateUrl: 'templates/loading.html',
+        templateUrl: 'menu/loading.html',
         controller: 'LoadingController'
     })
 
    .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'menu/menu.html',
     controller: 'MainConteinerController'
   })
 
@@ -28,7 +28,7 @@ angular.module('app.routes', [])
       url: '/dashboard',
         views:{
         'menuContent':{
-         templateUrl: 'templates/dashboard.html'
+         templateUrl: 'menu/dashboard.html'
          }
        }
     })
@@ -39,7 +39,7 @@ angular.module('app.routes', [])
         views:{
         'menuContent':{
       controller: 'MembersProfileController',
-      templateUrl: 'Authentications/profile.html'
+      templateUrl: 'Templates/Authentication/profile.html'
          }
       }
     })
@@ -48,37 +48,37 @@ angular.module('app.routes', [])
 /*About us page*/
  .state('aboutus', {
       url: '/aboutus',
-      templateUrl: 'Authentications/aboutus.html'
+      templateUrl: 'Templates/Authentication/aboutus.html'
     })
 
 
 /*Personal details and residential details tabs*/
 
- .state('app.personalAndresidentialdetails', {
-      url: '/profileAndresidentialdetailsTabs',
+ .state('app.personalAndResidentialDetails', {
+      url: '/profileAndResidentialDetailsTabs',
         views:{
         'menuContent':{
-         templateUrl: 'templates/profileTabs.html'
+         templateUrl: 'menu/profileTabs.html'
          }
   }})
 
-.state('app.personalAndresidentialdetails.personal', {
+.state('app.personalAndResidentialDetails.Personal', {
       url: '/personalDetails',
         views:{
         'personalDetails':{
       controller: 'PersonalDetailsController',
-      templateUrl: 'ProfileDetails/personalDetails.html'
+      templateUrl: 'Templates/ProfileDetails/personalDetails.html'
          }
       }
     })
 
 
-.state('app.personalAndresidentialdetails.residential', {
+.state('app.personalAndResidentialDetails.Residential', {
       url: '/residentialDetails',
         views:{
         'residentialDetails':{
          controller: 'ResidentialDetailsController',
-         templateUrl: 'ProfileDetails/residentialDetails.html'
+         templateUrl: 'Templates/ProfileDetails/residentialDetails.html'
          }
       }
     })
@@ -92,14 +92,14 @@ angular.module('app.routes', [])
       url: '/login',
        cache: false,
       controller: 'loginController',
-      templateUrl: 'Authentications/login.html'
+      templateUrl: 'Templates/Authentication/login.html'
     })
 
    .state('forgetpassword', {
       url: '/forgetpassword',
        cache: false,
       controller: 'forgetpasswordController',
-      templateUrl: 'Authentications/forgetpassword.html'
+      templateUrl: 'Templates/Authentication/forgetpassword.html'
     })
 
  
@@ -120,7 +120,7 @@ angular.module('app.routes', [])
   .state('createaccount', {
       url: '/newaccount',
       controller: 'CreateAccountController',
-      templateUrl: 'Authentications/createaccount.html'
+      templateUrl: 'Templates/Authentication/createaccount.html'
     })
 
   /*--------------------------------------------------------------------------------------------*/
@@ -329,7 +329,7 @@ angular.module('app.routes', [])
       url: '/subscriptiontabs',
         views:{
         'menuContent':{
-      templateUrl: 'templates/subscription-tabs.html'
+      templateUrl: 'menu/subscription-tabs.html'
          }
          }})
 
@@ -339,7 +339,7 @@ angular.module('app.routes', [])
         views:{
         'otherareasafinterest':{
           controller:'OtherAreasOfInterestController',
-           templateUrl: 'subscriptions/OtherAreasOfInterest.html'
+           templateUrl: 'Templates/subscriptions/OtherAreasOfInterest.html'
            
          }
       }
@@ -349,7 +349,7 @@ angular.module('app.routes', [])
         views:{
         'subscriptions':{
       controller: 'SubscriptionsController',
-      templateUrl: 'subscriptions/subscriptions.html'
+      templateUrl: 'Templates/subscriptions/subscriptions.html'
          }
       }
     })
