@@ -5,7 +5,7 @@ angular.module('NTCB.AccountControllers', [])
   });
 
   this.login = function (){
-
+      return "Success";
   };
 
   this.Register = function (){
