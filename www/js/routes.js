@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('NTCB.Routers', [])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -16,11 +16,12 @@ angular.module('app.routes', [])
         controller: 'LoadingController'
     })
 
+
    .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'menu/menu.html',
-    controller: 'MainConteinerController'
+    controller: 'MainContainerController'
   })
 
  /*dash board page*/
@@ -44,13 +45,11 @@ angular.module('app.routes', [])
       }
     })
     /*---------------------Ends here------------------------------------*/
-
 /*About us page*/
  .state('aboutus', {
       url: '/aboutus',
       templateUrl: 'Templates/Authentication/aboutus.html'
     })
-
 
 /*Personal details and residential details tabs*/
 
@@ -72,7 +71,6 @@ angular.module('app.routes', [])
       }
     })
 
-
 .state('app.personalAndResidentialDetails.Residential', {
       url: '/residentialDetails',
         views:{
@@ -84,7 +82,6 @@ angular.module('app.routes', [])
     })
 
 /*--------------------------Ends here ---------------------------------*/
-
 
  /*login and forget password pages and their controllers*/
 
@@ -101,18 +98,12 @@ angular.module('app.routes', [])
       controller: 'forgetpasswordController',
       templateUrl: 'Templates/Authentication/forgetpassword.html'
     })
-
- 
    /*---------------------------Ends here-------------------------------------*/
-
-
    /*Terms and conditions */
-   
    .state('termsandconditions', {
       url: '/termsandconditions',
       templateUrl: 'Authentications/termsandconditions.html'
     })
-
    /*--------------------------------Ends here---------------------------------------------*/
 
 /* create new account controller and its page*/
@@ -128,56 +119,60 @@ angular.module('app.routes', [])
 
 
   /*  National government  pages */
+
 .state('nationalgovernmentmenu', {
       url: '/nationalgovernmentmenupage',
-      templateUrl: 'Nationalgovernment/nationalgovernmentmenu.html'
+      templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentMenu.html'
     })
-
 .state('nationalgovernmentmeetinglist',{
       url: '/nationalgovernmentMeetingList',
        cache: false,
           controller:'NationalGovernmentMeetingListController',
-          templateUrl: 'Nationalgovernment/nationalgovernmentmeetingslist.html'
+          templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentMeetingsList.html'
         })
-
-
-.state('app.nationalgovernmentpastmeetinglist',{
+.state('nationalgovernmentmeetingDetails',{
+  url:'nationalgovernmentMeetingList/:meetingId',
+  controller :'NationalGovernmentMeetingDetailsController',
+  templateUrl : 'Templates/NationalGovernmentDetails/meetingFullDetails.html'})
+.state('nationalgovernmentpastmeetinglist',{
       url: '/nationalgovernmentPastMeetingList',
        cache: false,
           controller: 'NationalGovernmentPastMeetingListController',
-          templateUrl: 'Nationalgovernment/nationalgovernmentpastmeetingslist.html'
+          templateUrl: 'Templates/NationalGovernmentList/NationGovernmentPastMeetingsList.html'
         })
-
-.state('app.nationalgovernmenteventlist',{
+.state('nationalgovernmentpastmeetingdetails',{
+     url : '/nationalgovernmentPastMeetingList:pastMeetingId',
+     controller:'NationalGovernmentPastMeetingDetailsController',
+     templateUrl : 'Templates/NationalGovernmentDetails/pastMeetingDetails.html'})
+.state('nationalgovernmenteventlist',{
       url: '/nationalgovernmentEventList',
        cache: false,
-       
           controller:'NationalGovernmentEventListController',
-          templateUrl: 'Nationalgovernment/nationalgovernmenteventlist.html'
-         })
-
-.state('app.nationalgovernmentpasteventlist',{
+          templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentEventsList.html'})
+.state('app.nationalgovernmentEventDetails',{
+      url : '/nationalgovernmentEventList/:eventId',
+      templateUrl : 'Templates/NationalGovernmentDetails/eventFullDetails.html',
+      controller : 'NationalGovernmentPastEventDetailsController'})
+.state('nationalgovernmentpasteventlist',{
       url: '/nationalgovernmentPastEventList',
        cache: false,
-      
           controller : 'NationalGovernmentPastEventListController',
-          templateUrl: 'Nationalgovernment/nationalgovernmentpasteventlist.html'
+          templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentEventsList.html'
          })
-
+.state('nationalgovernmentPastEventDetails'{
+  url:'/nationalgovernmentPastEventList/:pastEventId',
+  templateUrl : 'Templates/NationalGovernmentDetails/pastEventFullDetails.html',
+  controller : 'NationalGovernmentPastEventDetailsController'})
 .state('nationalgovernmentemployeeslist',{
       url: '/nationalgovernmentEmployeesList',
        cache: false,
           controller : 'NationalGovernmentEmployeesListController',
-          templateUrl: 'Nationalgovernment/nationalgovernmentemployeelist.html'     
-  })
-
+          templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentEmployeesList.html'
+           })
 .state('nationalgovernmentemployeesDetails',{
       url: '/nationalgovernmentEmployeesList/:employeeid',
-          templateUrl: 'NationalgovernmentDetails/nationalgovernmentemployeedetails.html',
-          controller: 'NationalGovernmentEmployeesDetailsController' 
-    })
-
-
+          templateUrl: 'Templates/NationalGovernmentDetails/employeeDetails.html',
+          controller: 'NationalGovernmentEmployeesDetailsController' })
 /*  provincial government  pages */
 .state('provincialgovernmentmenu',{
       url: '/provincialgovernmentmenupage',
@@ -237,102 +232,85 @@ angular.module('app.routes', [])
 /* Local government  pages */
 .state('locallgovernmentmenu',{
       url: '/localgovernmentmenupage',
-          templateUrl: 'Localgovernment/localgovernmentmenu.html'
+          templateUrl: 'Templates/LocalgovernmentList/localGovernmentMenu.html'
         })
-
 
 .state('localgovernmentmeetinglist',{
       url: '/localgovernmentMeetingList',
        cache: false,
           controller:'LocalGovernmentMeetingListController',
-          templateUrl: 'Localgovernment/localgovernmentmeetingslist.html'
+          templateUrl: 'Templates/LocalgovernmentList/localGovernmentMeetingList.html'
          })
 
 .state('localgovernmentmeetingDetails',{
       url: '/localgovernmentMeetingList/:meetingid',
        cache: false,
           controller: 'LocalGovernmentmeetingDetailsController',
-          templateUrl: 'LocalgovernmentDetails/localgovernmentmeetingdetails.html'
+          templateUrl: 'Templates/LocalGovernmentDetails/meetingFullDetails.html'
          })
-
-
 
 .state('localgovernmentpastmeetinglist',{
       url: '/localgovernmentpastMeetingList',
        cache: false,
           controller:'LocalGovernmentPastMeetingListController',
-          templateUrl: 'Localgovernment/localgovernmentpastmeetingslist.html'
+          templateUrl: 'Templates/LocalgovernmentList/localGovernmentPastMeetingList.html'
          })
 
 .state('localgovernmentpastmeetingdetails',{
       url: '/localgovernmentpastMeetingList/:localgovernmentpastmeetingId',
        cache: false,
           controller:'LocalGovernmentPastMeetingDetailstController',
-          templateUrl: 'LocalgovernmentDetails/localgovernmentpastmeetingdetails.html'
+          templateUrl: 'Templates/LocalGovernmentDetails/pastMeetingFullDetails.html'
     })
-
-
 
 .state('localgovernmenteventlist',{
       url: '/localgovernmenteventList',
        cache: false,
           controller:'LocalGovernmentEventListController',
-          templateUrl: 'Localgovernment/localgovernmenteventlist.html'
+          templateUrl: 'Templates/LocalgovernmentList/localGovernmentevEentList.html'
         })
 
 .state('localgovernmenteventDetails',{
       url: '/localgovernmenteventList/:eventId',
        cache: false,
-       templateUrl: 'LocalgovernmentDetails/localgovernmenteventsdetails.html',
+       templateUrl: 'Templates/LocalgovernmentDetails/eventFullDetails.html',
        controller: 'LocalGovernmentEventDetailsController' 
     })
-
-
-
 
 .state('localgovernmentpasteventlist',{
       url: '/localgovernmentPastEventList',
         cache: false,
           controller : 'LocalGovernmentPastEventListController',
-          templateUrl: 'Localgovernment/localgovernmenteventlist.html'
+          templateUrl: 'Templates/LocalgovernmentList/localGovernmentPasteventsList.html'
          })
 
 .state('localgovernmentpasteventDetails',{
       url: '/localgovernmentPastEventList/:eventId',
-          templateUrl: 'LocalgovernmentDetails/localgovernmentpasteventsdetails.html',
+          templateUrl: 'Templates/LocalgovernmentDetails/pastEventFullDetails.html',
           controller: 'LocalGovernmentPastEventDetailsController' 
     })
-
-
-
-
 
 .state('localgovernmentemployeeslist',{
       url: '/localgovernmentemployeeslist',
          cache: false,
           controller : 'LocalGovernmentEmployeesListController',
-          templateUrl: 'Localgovernment/localgovernmentemployeelist.html'
+          templateUrl: 'Templates/LocalgovernmentList/localGovernmentEmployeeList.html'
          })
 
 .state('localgovernmentemployeesDetails',{
       url: '/localgovernmentemployeeslist/:employeeid',
-          templateUrl: 'LocalgovernmentDetails/localgovernmentemployeedetails.html',
+          templateUrl: 'Templates/LocalGovernmentDetails/employeeFullDetails.html',
           controller: 'LocalGovernmentEmployeesDetailsController' 
     })
-
-
-
-
 
 /* subscription page tabs*/
  .state('app.subscriptiontab', {
       url: '/subscriptiontabs',
         views:{
         'menuContent':{
-      templateUrl: 'menu/subscription-tabs.html'
+          templateUrl: 'menu/subscriptiontabs.html'
          }
-         }})
-
+      }})
 
  .state('app.subscriptiontab.otherareaofinterest', {
       url: '/OtherAreasOfInterest',
@@ -353,11 +331,9 @@ angular.module('app.routes', [])
          }
       }
     })
-
  /*--------------------------Ends here-------------------------------*/
 
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise("/0");
   $urlRouterProvider.otherwise('/login');
-
 });

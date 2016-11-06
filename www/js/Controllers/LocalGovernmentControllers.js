@@ -1,4 +1,5 @@
 angular.module('NTCB.localGovernment', [])
+
   .controller('LocalGovernmentMeetingListController', function($ionicLoading,ionicToast,$scope,$state, UpcomingAndCurrentMeetingServiceLocalGovernment){
 
   })

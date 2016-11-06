@@ -1,4 +1,5 @@
 angular.module('NTCB.AccountControllers', [])
+
   .controller('LoadingController', function ($state,$scope, $ionicPopup, LoginService, $ionicLoading, ionicToast, $state, UserProfileService) {
 
     $state.go('login');
@@ -21,10 +22,7 @@ angular.module('NTCB.AccountControllers', [])
 
   })
 
-  .controller('HomeSubscriptionsController', function($scope) {
-
-  })
-
+  
   .controller('ProfilePageController', function ($ionicScrollDelegate, $scope, $state, ionicToast, $ionicLoading, LocalStorageService, $filter, DB_CONSTANTS, ProfileFactory, $controller, $translate) {
 
   })
