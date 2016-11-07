@@ -4,7 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('NTCB', ['ionic', 
-  'NTCB.AccountControllers',
   'NTCB.localGovernment',
   'NTCB.nationalGovernment',
   'NTCB.provincialGovernment',
@@ -12,7 +11,8 @@ angular.module('NTCB', ['ionic',
   'NTCB.LocalGovernmentServices',
   'NTCB.NationalGovernmentServices',
   'NTCB.ProvincialGovernmentServices',
-  'NTCB.UserServices'])
+  'NTCB.UserServices',
+  'NTCB.UserAccountControllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

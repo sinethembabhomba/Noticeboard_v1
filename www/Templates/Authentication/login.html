@@ -1,3 +1,33 @@
-<ion-view title="Login" >
-	
+<ion-view view-title="Login" name="login-view">
+  <div class="bar bar-header bar-positive">
+  <h1 class="title">Notice Board</h1>
+</div>
+<ion-content class="has-header" padding="true">
+    <form name="loginForm" class="list " id="login-form1">
+            <ion-list class=" " id="login-list2">
+
+                <div class="app-icon"></div>
+
+                 <div style="height: 40px;" class="spacer"></div>
+
+               <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Username</span>
+              <input type="text" ng-model="user.username">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Password</span>
+              <input type="password" ng-model="user.password">
+            </label>
+          </div>
+
+            </ion-list>
+
+            <div style="height: 40px;" class="spacer"></div>
+            <button ng-click="loginEmail(loginForm,user)" class=" button button-assertive  button-block  icon-left ion-ios-email-outline "  id="signup-button3">LOGIN</button>
+            <button ng-click="loginFb('facebook')" class=" button button-positive  button-block icon-left ion-social-facebook "  id="signup-button4">CREATE ACCOUNT</button>
+        </form>
+
+    <a class=" button button-stable  button-block button-clear icon-left ion-ios-email-outline " id="login-button5" ui-sref="tabsController.forgotPassword">FORGOT PASSWORD</a>
+  </ion-content>
 </ion-view>

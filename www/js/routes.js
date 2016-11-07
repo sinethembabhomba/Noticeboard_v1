@@ -102,12 +102,11 @@ angular.module('NTCB.Routers', [])
    /*Terms and conditions */
    .state('termsandconditions', {
       url: '/termsandconditions',
-      templateUrl: 'Authentications/termsandconditions.html'
+      templateUrl: 'Templates/Authentication/termsAndConditions.html'
     })
    /*--------------------------------Ends here---------------------------------------------*/
 
 /* create new account controller and its page*/
-
   .state('createaccount', {
       url: '/newaccount',
       controller: 'CreateAccountController',
@@ -120,84 +119,99 @@ angular.module('NTCB.Routers', [])
 
   /*  National government  pages */
 
+
+
 .state('nationalgovernmentmenu', {
       url: '/nationalgovernmentmenupage',
       templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentMenu.html'
     })
+
+
+
 .state('nationalgovernmentmeetinglist',{
       url: '/nationalgovernmentMeetingList',
        cache: false,
           controller:'NationalGovernmentMeetingListController',
           templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentMeetingsList.html'
         })
+
 .state('nationalgovernmentmeetingDetails',{
   url:'nationalgovernmentMeetingList/:meetingId',
   controller :'NationalGovernmentMeetingDetailsController',
   templateUrl : 'Templates/NationalGovernmentDetails/meetingFullDetails.html'})
+
 .state('nationalgovernmentpastmeetinglist',{
       url: '/nationalgovernmentPastMeetingList',
        cache: false,
           controller: 'NationalGovernmentPastMeetingListController',
           templateUrl: 'Templates/NationalGovernmentList/NationGovernmentPastMeetingsList.html'
         })
+
 .state('nationalgovernmentpastmeetingdetails',{
      url : '/nationalgovernmentPastMeetingList:pastMeetingId',
      controller:'NationalGovernmentPastMeetingDetailsController',
      templateUrl : 'Templates/NationalGovernmentDetails/pastMeetingDetails.html'})
+
 .state('nationalgovernmenteventlist',{
       url: '/nationalgovernmentEventList',
        cache: false,
           controller:'NationalGovernmentEventListController',
           templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentEventsList.html'})
+
 .state('app.nationalgovernmentEventDetails',{
       url : '/nationalgovernmentEventList/:eventId',
       templateUrl : 'Templates/NationalGovernmentDetails/eventFullDetails.html',
       controller : 'NationalGovernmentPastEventDetailsController'})
+
 .state('nationalgovernmentpasteventlist',{
       url: '/nationalgovernmentPastEventList',
        cache: false,
           controller : 'NationalGovernmentPastEventListController',
           templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentEventsList.html'
          })
-.state('nationalgovernmentPastEventDetails'{
+
+.state('nationalgovernmentPastEventDetails',{
   url:'/nationalgovernmentPastEventList/:pastEventId',
   templateUrl : 'Templates/NationalGovernmentDetails/pastEventFullDetails.html',
   controller : 'NationalGovernmentPastEventDetailsController'})
+
 .state('nationalgovernmentemployeeslist',{
       url: '/nationalgovernmentEmployeesList',
        cache: false,
           controller : 'NationalGovernmentEmployeesListController',
           templateUrl: 'Templates/NationalGovernmentList/NationalGovernmentEmployeesList.html'
            })
+
 .state('nationalgovernmentemployeesDetails',{
       url: '/nationalgovernmentEmployeesList/:employeeid',
           templateUrl: 'Templates/NationalGovernmentDetails/employeeDetails.html',
           controller: 'NationalGovernmentEmployeesDetailsController' })
+
 /*  provincial government  pages */
 .state('provincialgovernmentmenu',{
       url: '/provincialgovernmentmenupage',
-      templateUrl: 'Provincialgovernment/provincialgovernmentmenu.html'      
+      templateUrl: 'Templates/ProvincialGovernmentList/provincialGovernmentMenu.html'      
   })
 
 .state('provincialgovernmentmeetinglist',{
       url: '/provincialgovernmentMeetingList',
        cache: false,
           controller:'ProvincialGovernmentMeetingListController',
-          templateUrl: 'Provincialgovernment/provincialgovernmentmeetingslist.html'
+          templateUrl: 'Templates/ProvincialGovernmentList/provincialGovernmentMeetingList.html'
       })
 
 .state('provincialgovernmentpastmeetinglist',{
       url: '/provincialgovernmentPastMeetingList',
        cache: false,
           controller: 'ProvincialGovernmentPastMeetingListController',
-          templateUrl: 'Provincialgovernment/provincialgovernmentpastmeetingslist.html'
+          templateUrl: 'Templates/ProvincialGovernmentList/provincialGovernmentPastMeetingList.html'
          })
 
 .state('provincialgovernmenteventlist',{
       url: '/provincialgovernmentEventList',
        cache: false, 
           controller:'ProvincialGovernmentEventListController',
-          templateUrl: 'Provincialgovernment/provincialgovernmenteventlist.html'
+          templateUrl: 'Templates/ProvincialgovernmentList/provincialGovernmentEventList.html'
          })
 
 .state('provincialgovernmentpasteventlist',{
@@ -205,29 +219,22 @@ angular.module('NTCB.Routers', [])
        cache: false,
        
           controller : 'ProvincialGovernmentPastEventListController',
-          templateUrl: 'Provincialgovernment/provincialgovernmentpasteventlist.html'
+          templateUrl: 'Templates/ProvincialgovernmentList/provincialGovernmentPasteventList.html'
          })
 
 .state('provincialgovernmentemployeeslist',{
       url: '/provincialgovernmentEmployeesList',
        cache: false,
           controller : 'ProvincialGovernmentEmployeesListController',
-          templateUrl: 'Provincialgovernment/provincialgovernmentemployeelist.html'
+          templateUrl: 'Templates/ProvincialgovernmentList/provincialGovernmentEmployeeList.html'
          })
+
 
 .state('provincialgovernmentEmployeesDetails',{
       url: '/provincialgovernmentEmployeesList/:employeeid',
-          templateUrl: 'ProvincialgovernmentDetails/provincialgovernmentemployeedetails.html',
+          templateUrl: 'Templates/ProvincialGovernmentDetails/employeeDetails.html',
           controller: 'ProvincialGovernmentEmployeesDetailsController'
         })
-
-.state('provincialgovernmentjobpostslist',{
-      url: '/provincialgovernmentjobpostsList',
-       cache: false,
-       
-          controller : 'ProvincialGovernmentJobPostsListController',
-          templateUrl: 'Provincialgovernment/provincialgovernmentjobpostslist.html'
-         })
 
 /* Local government  pages */
 .state('locallgovernmentmenu',{
@@ -331,6 +338,7 @@ angular.module('NTCB.Routers', [])
          }
       }
     })
+
  /*--------------------------Ends here-------------------------------*/
 
   // if none of the above states are matched, use this as the fallback

@@ -1,17 +1,19 @@
-angular.module('NTCB.AccountControllers', [])
+angular.module('NTCB.UserAccountControllers', [])
 
-  .controller('LoadingController', function ($state,$scope, $ionicPopup, LoginService, $ionicLoading, ionicToast, $state, UserProfileService) {
+
+
+.controller('LoadingController', function ($state,$scope, $ionicPopup, LoginService, $ionicLoading, ionicToast, $state, UserProfileService) {
 
     $state.go('login');
-  });
 
-  this.login = function (){
+     this.login = function (){
       return "Success";
   };
 
   this.Register = function (){
 
   }
+  })
 
   .controller('MainContainerController', function($scope) {
 

@@ -1,4 +1,5 @@
 angular.module('NTCB.nationalGovernment', [])
+
   .controller('NationalGovernmentMeetingListController', function($scope,$state,$ionicLoading,UpcomingAndCurrentMeetingServiceNationalGovernment){
 
   })
